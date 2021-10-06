@@ -9,7 +9,7 @@ public class ItemGenerator : MonoBehaviour
     public GameObject conePrefab;
     public GameObject unitychan;
 
-    private int startPos = 35;
+    private int startPos = 20;
     private int goalPos = 360;
     private float posRange = 3.4f;
     private float unitychanPos;
@@ -36,7 +36,7 @@ public class ItemGenerator : MonoBehaviour
                 for (float j = -1; j <= 1; j += 0.4f)
                 {
                     GameObject cone = Instantiate (conePrefab);
-                    cone.transform.position = new Vector3 (4 * j, cone.transform.position.y, unitychanPos + 45); //50m先に生成
+                    cone.transform.position = new Vector3 (4 * j, cone.transform.position.y, unitychanPos + 60); //60m先に生成
                 }
             }
             else
@@ -48,12 +48,12 @@ public class ItemGenerator : MonoBehaviour
                     if (1 <= item && item <= 6)
                     {
                         GameObject coin = Instantiate (coinPrefab);
-                        coin.transform.position = new Vector3 (posRange * j, coin.transform.position.y, unitychanPos + 50 + offsetZ);
+                        coin.transform.position = new Vector3 (posRange * j, coin.transform.position.y, unitychanPos + 60 + offsetZ);
                     }
                     else if (7 <= item && item <= 9)
                     {
                         GameObject car = Instantiate (carPrefab);
-                        car.transform.position = new Vector3 (posRange * j, car.transform.position.y, unitychanPos + 50 + offsetZ);
+                        car.transform.position = new Vector3 (posRange * j, car.transform.position.y, unitychanPos + 60 + offsetZ);
                     }
                 }
             }
