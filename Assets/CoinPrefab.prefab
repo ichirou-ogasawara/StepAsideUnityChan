@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2271895828403240400}
   - component: {fileID: 1733283622466083365}
   - component: {fileID: 1733283622466083364}
-  - component: {fileID: -8950658670966274020}
+  - component: {fileID: -5033886689711248846}
   - component: {fileID: 6275109436400153319}
   m_Layer: 0
   m_Name: CoinPrefab
@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e9c06397499a9941b9e750d6074761c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-8950658670966274020
+--- !u!114 &-5033886689711248846
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -71,9 +71,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1498772425685002090}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7486419bb8618747b7143c440c05462, type: 3}
+  m_Script: {fileID: 11500000, guid: cf2ae7b3b1b248d42b08f9de59bfb07f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unitychan: {fileID: 0}
 --- !u!23 &6275109436400153319
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -81,7 +82,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1498772425685002090}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

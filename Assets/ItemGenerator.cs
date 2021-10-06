@@ -9,55 +9,58 @@ public class ItemGenerator : MonoBehaviour
     public GameObject conePrefab;
     public GameObject unitychan;
 
-    private int startPos = 80;
+    private int startPos = 35;
     private int goalPos = 360;
-    private float posRange = 3.4f; // アイテムを出すx方向の範囲(間隔を広げるため)
-    float unitychanPos;
+    private float posRange = 3.4f;
+    private float unitychanPos;
+    private int lastGeneratePos; //直近で通過した生成位置
 
     // Start is called before the first frame update
     void Start()
     {
         this.unitychan = GameObject.Find("unitychan");
-        //for (float generatePos = startPos; generatePos < goalPos; generatePos += (this.unitychanPos + 15)) //一定の距離ごとにアイテム
-        
+        this.lastGeneratePos = startPos; //生成位置をstartPosで初期化
     }
 
     // Update is called once per frame
     void Update()
     {
-        this.unitychanPos = this.unitychan.transform.position.z;
-        float generatePos = (unitychanPos + 45.0f);
-
-        if ((generatePos > startPos) && (generatePos < goalPos))
+        this.unitychanPos = this.unitychan.transform.position.z; //unitychanのz座標を取得
+        
+        if ((unitychanPos - lastGeneratePos) >= 15) //直近の生成位置との距離が15mになると
         {
-            int num = Random.Range (1, 501); //どのアイテムを出すのかをランダムに設定
-            if (num == 1)
+            int num = Random.Range (1, 11); //どのアイテムを出すのかをランダムに設定
+            if (num <= 2)
             {
                 //コーンをx軸方向に一直線上に生成
                 for (float j = -1; j <= 1; j += 0.4f)
                 {
                     GameObject cone = Instantiate (conePrefab);
-                    cone.transform.position = new Vector3 (4 * j, cone.transform.position.y, generatePos); //4はコーンの間隔を広げるための数値
+                    cone.transform.position = new Vector3 (4 * j, cone.transform.position.y, unitychanPos + 45); //50m先に生成
                 }
             }
             else
             {
                 for (int j = -1; j <= 1; j++)
                 {
-                    int item = Random.Range (1, 501);
+                    int item = Random.Range (1, 11);
                     int offsetZ = Random.Range (-5, 6);
-                    if (1 <= item && item <= 3)
+                    if (1 <= item && item <= 6)
                     {
                         GameObject coin = Instantiate (coinPrefab);
-                        coin.transform.position = new Vector3 (posRange * j, coin.transform.position.y, generatePos + offsetZ);
+                        coin.transform.position = new Vector3 (posRange * j, coin.transform.position.y, unitychanPos + 50 + offsetZ);
                     }
-                    else if (4 <= item && item <= 5)
+                    else if (7 <= item && item <= 9)
                     {
                         GameObject car = Instantiate (carPrefab);
-                        car.transform.position = new Vector3 (posRange * j, car.transform.position.y, generatePos + offsetZ);
+                        car.transform.position = new Vector3 (posRange * j, car.transform.position.y, unitychanPos + 50 + offsetZ);
                     }
                 }
             }
+            if (lastGeneratePos < goalPos) //生成位置がゴールを超えるまで
+            {
+                this.lastGeneratePos += 15; //生成位置を15m先に更新
+            }    
         }
     }
 }

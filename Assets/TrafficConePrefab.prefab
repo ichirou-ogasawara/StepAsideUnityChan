@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3803523258024273757}
+  - component: {fileID: -2554872423398955297}
   - component: {fileID: 3797621815699984309}
   - component: {fileID: 3789594224719580493}
-  - component: {fileID: 3518357524514329366}
   - component: {fileID: 6413526049763923994}
   m_Layer: 0
   m_Name: TrafficConePrefab
@@ -34,6 +34,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-2554872423398955297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3802564465832679299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf2ae7b3b1b248d42b08f9de59bfb07f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitychan: {fileID: 0}
 --- !u!33 &3797621815699984309
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -83,18 +96,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3518357524514329366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3802564465832679299}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7486419bb8618747b7143c440c05462, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &6413526049763923994
 BoxCollider:
   m_ObjectHideFlags: 0
